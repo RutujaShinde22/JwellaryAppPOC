@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JwellaryAppPOC.View.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Text="Login"
+                  Style="{StaticResource TitleLabel}"/>
+            
+            <Image Grid.Row="1"
+                    Source="image"/>
+            <Entry Grid.Row="2" 
+                Placeholder="UserName"
+                    Text="{Binding userNameEntry}"/>
+            <Entry Grid.Row="3"
+                   Placeholder="Passwod"
+                   Text="{Binding passwordEntry}"/>
+            <Button Grid.Row="4"
+                    Text="Login"
+                    Command="{Binding LoginCommand}"/>
+            <Button Grid.Row="5"
+                    Text="SignUp"
+                    Command="{Binding SignUpCommand}"/>
+            <Button Grid.Row="6"
+                    Text="Forget Password"/>
+        </Grid>
+  </ContentPage.Content>
+</ContentPage>

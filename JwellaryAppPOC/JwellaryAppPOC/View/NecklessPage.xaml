@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JwellaryAppPOC.View.NecklessPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <ListView x:Name="NecklessList"  ItemsSource="{Binding items}" HasUnevenRows="True"
+            SelectedItem="{Binding BindingContext.SelectedItem, Source={x:Reference NecklessList}, Mode=TwoWay}" >
+            <ListView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding tapSelectItemCommand}"/>
+            </ListView.GestureRecognizers>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="0,5,10,5">
+                                <Image Grid.Row="0" Grid.Column="0"
+                                       Source="{Binding Image}"
+                                       Style="{StaticResource IconImage}"/>
+                                <StackLayout Grid.Row="0" Grid.Column="1">
+                                <Label Text="{Binding Name}"
+                                       Style="{StaticResource TextLabel}"/>
+                                <Label Text="{Binding Description}" 
+                                        Style="{StaticResource TextLabel1}"/>
+                            </StackLayout>
+                                <StackLayout  Grid.Row="0" Grid.Column="2">
+                                <Label Text="{Binding Price}"
+                                        Style="{StaticResource TextLabel}"/>
+                            </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </ContentPage.Content>
+</ContentPage>

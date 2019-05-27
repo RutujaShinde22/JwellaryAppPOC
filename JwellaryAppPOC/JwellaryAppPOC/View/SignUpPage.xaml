@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JwellaryAppPOC.View.SignUpPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   HorizontalOptions="Center"
+                   Text="Sign Up"
+                   TextColor="Black"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+                <Entry 
+                   x:Name="FirstName"
+                   Text="{Binding FirstNameEntry}"
+                   Placeholder="   First Name     "
+                   TextChanged="FirstName_TextChanged" 
+                    Margin="0,0,30,0"/>
+
+                <Entry 
+                     x:Name="LastName"
+                    Text="{Binding LastNameEntry}"
+                    Placeholder="   Last Name     "
+                   TextChanged="LastName_TextChanged"/>
+               
+            </StackLayout>
+
+            <Entry Grid.Row="2" 
+                     Text="{Binding EmailEntry}"
+                   x:Name="Email"
+                Placeholder="Email"
+                   TextChanged="Email_TextChanged"/>
+
+            <Entry Grid.Row="3" 
+                   x:Name="Address"
+                     Text="{Binding AddressEntry}"
+                Placeholder="Address"/>
+
+            <Entry Grid.Row="4" 
+                   x:Name="MobileNo"
+                Placeholder="Mobile No"
+                   Keyboard="Numeric"/>
+            <Entry 
+                Grid.Row="5"
+                   x:Name="userName"
+                  Text="{Binding UserNameEntry}"
+                   Placeholder="Create UserName"/>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="6" HorizontalOptions="StartAndExpand" >
+                <Entry 
+                   x:Name="password"
+                      Text="{Binding PasswordEntry}"
+                   Placeholder="Enter Password"
+                Margin="0,0,40,0"/>
+
+                <Entry  
+                x:Name="rePassword"
+                    IsPassword="True"
+                  Text="{Binding PasswordReEntry}"   
+                Placeholder="Confirm Password"   />
+            </StackLayout>
+
+            <DatePicker Grid.Row="7"   />
+
+            <Button Grid.Row="8"
+                    Text="Submit"
+                    Command="{Binding SubmitCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

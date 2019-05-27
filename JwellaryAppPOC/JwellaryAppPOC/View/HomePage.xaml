@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JwellaryAppPOC.View.HomePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout>
+                <Label Text="Welcome"
+                  Style="{StaticResource TitleLabel}" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Grid>
+                    <!--Neckless-->
+                    <Frame Grid.Row="0" Grid.Column="0"
+                           Margin="5,10,5,10">
+                        <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding NecklessSelected}"
+                            NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Image
+                                     Source="neckless"/>
+                            <Label Text="Necklecsess"
+                                   Style="{StaticResource HeaderLabel}" />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <!--Ring-->
+                    <Frame Grid.Row="0" Grid.Column="1"
+                            Margin="5,10,5,10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding RingSelected}"
+                            NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Image
+                                     Source="ring1"/>
+                            <Label Text="Rings"
+                                   Style="{StaticResource HeaderLabel}"/>
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <!--Bangels-->
+                <Grid> 
+                    <Frame Grid.Column="0"
+                            Margin="5,10,5,10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding BangelSelected}"
+                            NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Image
+                                     Source="bangels1"/>
+                            <Label Text="Bangels"
+                                   Style="{StaticResource HeaderLabel}"/>
+                        </StackLayout>
+                    </Frame>
+                    <!--earrings-->
+                    <Frame  Grid.Column="1"
+                              Margin="5,10,5,10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding EarringSelected}"
+                            NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Image
+                                     Source="earrings"/>
+                            <Label Text="Earrings"
+                                  Style="{StaticResource HeaderLabel}"/>
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
